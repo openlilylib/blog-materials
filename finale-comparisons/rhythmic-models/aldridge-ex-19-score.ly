@@ -1,7 +1,7 @@
 \version "2.16.2"
 
 % Set the global layout parameters.
-% (For this example we don't actually need them
+% (For this example we don't actually need them)
 \paper {
   % Remove the default indentation of the first system
   indent = 0
