@@ -1,5 +1,9 @@
 \version "2.16.2"
 
+
+#(set-default-paper-size "a4landscape")
+#(set-global-staff-size 28)
+
 % Set the global layout parameters.
 % (For this example we don't actually need them)
 \paper {
