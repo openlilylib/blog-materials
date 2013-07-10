@@ -29,6 +29,9 @@ global = {
   \stemUp  
   % Define the time signature
   \time 7/2
+  % Make the beams divided
+  \set subdivideBeams = ##t
+  \set baseMoment = #(ly:make-moment 1 16)
 }
 
 % Prepare the five versions of the pattern
@@ -98,8 +101,12 @@ V =  {
   % Several layers in parallel
   <<
     % Five DrumStaff instances with their corresponding patterns
-    \new DrumStaff \drummode { \I }
-    \new DrumStaff \drummode { \II }
+    \new DrumStaff \drummode { 
+      \override Beam.stencil = ##f
+      \I }
+    \new DrumStaff \drummode { 
+      \override Beam.stencil = ##f
+      \II }
     \new DrumStaff \drummode { \III }
     \new DrumStaff \drummode { \IV }
     \new DrumStaff \drummode { \V }
