@@ -1,0 +1,6 @@
+music = {
+  \pattern
+  \pattern
+  \pattern
+}
+
