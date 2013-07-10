@@ -1,8 +1,11 @@
 \version "2.16.2"
 
+
 % Set the global layout parameters.
 % (For this example we don't actually need them)
 \paper {
+%  paper-width = 200\mm
+%   paper-height = 140\mm
   % Remove the default indentation of the first system
   indent = 0
 }
@@ -77,10 +80,6 @@ V =  {
   % We can override for different contexts individually
   \context {
     \Score
-    % We don't want the timing and barline engraving
-    % to live in the context of the score.
-    \remove Timing_translator
-    \remove Default_bar_line_engraver
     % remove connecting line at system start
     % (note that we don't have to do that explicitly
     %  for the rest of the system because we define
@@ -89,9 +88,6 @@ V =  {
   }
   \context {
     \DrumStaff
-      % Here it is where we want the timing to be managed
-      \consists Timing_translator
-      \consists Default_bar_line_engraver
       % It is simple to use any number of stafflines
       \override StaffSymbol #'line-count = #1
   }
