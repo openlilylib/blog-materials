@@ -7,6 +7,11 @@
   indent = 0
 }
 
+\header {
+  % What title should the PDF file display
+  pdftitle = "David Aldrige: Elements of Rhythm, Vol. II, Ex. 19"
+}
+
 % Define a reusable variable for the pattern.
 % This could also be done more generic using a Scheme function,
 % but I want to keep it simple for this example.
