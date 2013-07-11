@@ -5,46 +5,58 @@
 
 def pattern(index):
     """Generate a pattern from the
-       binary representation of index"""
-    res = ''
+       binary representation of index.
+       Returns a LilyPond code pattern
+       and the length of the original pattern."""
+    # extract binary pattern from index
     pat = bin(index)[2:]
-    # generate the beams
+    # find first and last note (for beaming)
     first = pat.find('1')
     last = pat.rfind('1')
+    # building blocks for the pattern
     notes = { '1': 'c2', '0': 'r2' }
-    beams = { first: '[ ', last: '] ' }
     if (first == -1) or (first == last):
-        first = last = -1
+        first = last = -2
+    beams = { first: '[ ', last: '] ' }
+    # collate pattern from notes/rests and beams
+    result = ''
     for i in range(len(pat)):
-        res += notes[pat[i]]
-        res += beams.get(i, ' ')
-    return res, str(len(pat))
+        result += notes[pat[i]]
+        result += beams.get(i, ' ')
+    return result, str(len(pat))
 
-content = ''
-cnt = 0
-for i in range(2, 128):
-    pat, length = pattern(i)
-    isNewTime = (i & (i - 1)) == 0 # a power of two
-    isFourBars = cnt % 4 == 0
+def generate_patterns(numbers):
+    content = ''
+    cnt = 0
+    for i in numbers:
+        # get the pattern and its length
+        pat, length = pattern(i)
+        # determine if we reach a new pattern length
+        # or have completed four bars
+        isNewTime = (i & (i - 1)) == 0 # a power of two
+        isFourBars = cnt % 4 == 0
     
-    # insert a line break after four bars
-    if cnt != 0 and isFourBars:
-       content += '\\break\n'
-    # insert a exercise number after four bars or a time change
-    if isNewTime or isFourBars:
-        content += '\\mark \\default\n'
-    # insert a time change when the length of the patterns changes
-    if cnt != 0 and isNewTime:
-        # optionally insert a break when there isn't already one
-        if not (cnt == 0 or isFourBars):
-           content += '\\break\n'
-           cnt = 0
-        content += '\\time ' + length + '/2\n'
-    # collate the pattern
-    content += pat  + ' | % ' + str(i) + '\n'
-    cnt += 1
+        # insert an code for a time change or nothing
+        time = '\\time ' + length + '/2\n' if isNewTime else ''
+    
+        # process every four bars _or_ time change
+        if isFourBars or isNewTime:
+            content += time + '\\newExercise ' + length + '\n'
+            cnt = 0
+          
+        # append the pattern
+        content += pat  + ' | % ' + str(i) + '\n'
+        cnt += 1
 
-start = 'patterns = {\n'
-end = '}'
+    # wrap into a music function
+    start = ('patterns =\n' +
+        '#(define-music-function (parser location layer) (number?)\n' +
+        '(set! denominator layer)\n' +
+        '#{\n' )
 
-text = 'patterns = {\n' + content + '}'
+    end = '#})\n'
+
+    #write the result to the document
+    return start + content + end
+
+text = generate_patterns(range(2,128))

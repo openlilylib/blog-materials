@@ -1,89 +1,69 @@
 \version "2.16.2"
 
 
-\include "building-blocks-paper.ily"
+% include paper layout
+% uncomment the version we want to use
+\include "building-blocks-a4.ily"
+%\include "building-blocks-beamer.ily"
 
+% include global layout definitions
+\include "layout.ily"
+
+
+%{ function to 
+   - print the exercise number
+   - print the virtual time signature
+   - insert a line break
+%}
+newExercise = 
+#(define-music-function (parser location numerator) (number?)
+    #{
+      \break
+      \mark \default
+      % denominator is set within \patterns as a function of the current layer
+      \set DrumStaff.timeSignatureFraction = #(cons numerator denominator) #})
+
+
+% include the actual (generated) musical content
 \include "building-blocks-patterns.ily"
 
-%\include "building-blocks-collate-patterns.ily"
-
+% not implemented yet
 \include "building-blocks-numbers.ily"
 
 
-% Define common ("global") elements
-global = {
-  % By default the stems would go down (-> mimick the model)
-  \stemUp  
-  % Define the time signature
-%  \time 7/2
-  % Make the beams divided
-  
-}
-
 % Prepare the five versions of the pattern
 I =  {
-  % _use_ the global elements
-  \global
-  % For the first version simply _use_ the pattern
-  \patterns
+  % Use the \patterns function and pass the denominator as argument
+  \patterns 2
 }
 
 II =  {
-  \global
-  % Display a different time signature
-  %\set DrumStaff.timeSignatureFraction = 7/4
   % Change the half notes to crotchets
   \shiftDurations #1 #0
   % make them use double space
   \scaleDurations 2/1
-  % use the modified pattern
-  \patterns
+  % use the modified pattern with "4" as denominator
+  \patterns 4
 }
 
 III =  {
-  \global
- % \set DrumStaff.timeSignatureFraction = 7/8
   \shiftDurations #2 #0
   \scaleDurations 4/1
-  \patterns
+  \patterns 8
 }
 
 IV =  {
-  \global
- % \set DrumStaff.timeSignatureFraction = 7/16
   \shiftDurations #3 #0
   \scaleDurations 8/1
-  \patterns
+  \patterns 16
 }
 
 V =  {
-  \global
- % \set DrumStaff.timeSignatureFraction = 7/32
   \scaleDurations 16/1
   \shiftDurations #4 #0
-  \patterns
+  \patterns 32
 }
 
-% Override some layout parameters
-\layout {
-  % We can override for different contexts individually
-  \context {
-    \Score
-    % remove connecting line at system start
-    % (note that we don't have to do that explicitly
-    %  for the rest of the system because we define
-    %  the staves as individual staves later)
-    \override SystemStartBar #'stencil = ##f
-    % Let rehearsal marks be printed as numbers with a box
-    markFormatter = #format-mark-box-numbers
-    \override TimeSignature #'break-visibility = #'#(#f #f #t)
-  }
-  \context {
-    \DrumStaff
-      % It is simple to use any number of stafflines
-      \override StaffSymbol #'line-count = #1
-  }
-}
 
 % Define our score structure
 \score {
@@ -91,6 +71,7 @@ V =  {
   <<
     % Five DrumStaff instances with their corresponding patterns
     \new DrumStaff \drummode { 
+      % Remove any beams for the halfnote and crotchet layers
       \override Beam.stencil = ##f
       \I }
     \new DrumStaff \drummode { 
@@ -103,5 +84,5 @@ V =  {
     %\new Dynamics \numbers
   >>
   % This actually triggers creating a print layout
-  \layout { }
+  \layout {}
 }
