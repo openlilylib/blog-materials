@@ -1,6 +1,0 @@
-music = {
-  \pattern
-  \pattern
-  \pattern
-}
-

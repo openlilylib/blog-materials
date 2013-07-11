@@ -6,11 +6,15 @@
   indent = 0
   max-systems-per-page = 3
   min-systems-per-page = 3
-  system-count = 3
   ragged-last-bottom = ##f
 }
 
 \layout {
+  \context {
+    \Score
+      \remove Bar_number_engraver
+      \numericTimeSignature
+  }
   \context {
     \DrumStaff
       \set subdivideBeams = ##t

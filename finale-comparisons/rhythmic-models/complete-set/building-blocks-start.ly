@@ -5,7 +5,7 @@
 
 \include "building-blocks-patterns.ily"
 
-\include "building-blocks-collate-patterns.ily"
+%\include "building-blocks-collate-patterns.ily"
 
 \include "building-blocks-numbers.ily"
 
@@ -25,43 +25,43 @@ I =  {
   % _use_ the global elements
   \global
   % For the first version simply _use_ the pattern
-  \music
+  \patterns
 }
 
 II =  {
   \global
   % Display a different time signature
-  \set DrumStaff.timeSignatureFraction = 7/4
+  %\set DrumStaff.timeSignatureFraction = 7/4
   % Change the half notes to crotchets
   \shiftDurations #1 #0
   % make them use double space
   \scaleDurations 2/1
   % use the modified pattern
-  \music
+  \patterns
 }
 
 III =  {
   \global
-  \set DrumStaff.timeSignatureFraction = 7/8
+ % \set DrumStaff.timeSignatureFraction = 7/8
   \shiftDurations #2 #0
   \scaleDurations 4/1
-  \music
+  \patterns
 }
 
 IV =  {
   \global
-  \set DrumStaff.timeSignatureFraction = 7/16
+ % \set DrumStaff.timeSignatureFraction = 7/16
   \shiftDurations #3 #0
   \scaleDurations 8/1
-  \music
+  \patterns
 }
 
 V =  {
   \global
-  \set DrumStaff.timeSignatureFraction = 7/32
+ % \set DrumStaff.timeSignatureFraction = 7/32
   \scaleDurations 16/1
   \shiftDurations #4 #0
-  \music
+  \patterns
 }
 
 % Override some layout parameters
@@ -76,6 +76,7 @@ V =  {
     \override SystemStartBar #'stencil = ##f
     % Let rehearsal marks be printed as numbers with a box
     markFormatter = #format-mark-box-numbers
+    \override TimeSignature #'break-visibility = #'#(#f #f #t)
   }
   \context {
     \DrumStaff
@@ -99,7 +100,7 @@ V =  {
     \new DrumStaff \drummode { \IV }
     \new DrumStaff \drummode { \V }
     % One  additional context without staff for the numbers
-    \new Dynamics \numbers
+    %\new Dynamics \numbers
   >>
   % This actually triggers creating a print layout
   \layout { }
