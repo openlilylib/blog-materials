@@ -166,4 +166,165 @@ patterns =
      c2[ c2 c2 c2 c2 r2 c2]  | % 125
      c2[ c2 c2 c2 c2 c2] r2  | % 126
      c2[ c2 c2 c2 c2 c2 c2]  | % 127
+     \time 8/2
+     \newExercise 8
+     c2 r2 r2 r2 r2 r2 r2 r2  | % 128
+     c2[ r2 r2 r2 r2 r2 r2 c2]  | % 129
+     c2[ r2 r2 r2 r2 r2 c2] r2  | % 130
+     c2[ r2 r2 r2 r2 r2 c2 c2]  | % 131
+     \newExercise 8
+     c2[ r2 r2 r2 r2 c2] r2 r2  | % 132
+     c2[ r2 r2 r2 r2 c2 r2 c2]  | % 133
+     c2[ r2 r2 r2 r2 c2 c2] r2  | % 134
+     c2[ r2 r2 r2 r2 c2 c2 c2]  | % 135
+     \newExercise 8
+     c2[ r2 r2 r2 c2] r2 r2 r2  | % 136
+     c2[ r2 r2 r2 c2 r2 r2 c2]  | % 137
+     c2[ r2 r2 r2 c2 r2 c2] r2  | % 138
+     c2[ r2 r2 r2 c2 r2 c2 c2]  | % 139
+     \newExercise 8
+     c2[ r2 r2 r2 c2 c2] r2 r2  | % 140
+     c2[ r2 r2 r2 c2 c2 r2 c2]  | % 141
+     c2[ r2 r2 r2 c2 c2 c2] r2  | % 142
+     c2[ r2 r2 r2 c2 c2 c2 c2]  | % 143
+     \newExercise 8
+     c2[ r2 r2 c2] r2 r2 r2 r2  | % 144
+     c2[ r2 r2 c2 r2 r2 r2 c2]  | % 145
+     c2[ r2 r2 c2 r2 r2 c2] r2  | % 146
+     c2[ r2 r2 c2 r2 r2 c2 c2]  | % 147
+     \newExercise 8
+     c2[ r2 r2 c2 r2 c2] r2 r2  | % 148
+     c2[ r2 r2 c2 r2 c2 r2 c2]  | % 149
+     c2[ r2 r2 c2 r2 c2 c2] r2  | % 150
+     c2[ r2 r2 c2 r2 c2 c2 c2]  | % 151
+     \newExercise 8
+     c2[ r2 r2 c2 c2] r2 r2 r2  | % 152
+     c2[ r2 r2 c2 c2 r2 r2 c2]  | % 153
+     c2[ r2 r2 c2 c2 r2 c2] r2  | % 154
+     c2[ r2 r2 c2 c2 r2 c2 c2]  | % 155
+     \newExercise 8
+     c2[ r2 r2 c2 c2 c2] r2 r2  | % 156
+     c2[ r2 r2 c2 c2 c2 r2 c2]  | % 157
+     c2[ r2 r2 c2 c2 c2 c2] r2  | % 158
+     c2[ r2 r2 c2 c2 c2 c2 c2]  | % 159
+     \newExercise 8
+     c2[ r2 c2] r2 r2 r2 r2 r2  | % 160
+     c2[ r2 c2 r2 r2 r2 r2 c2]  | % 161
+     c2[ r2 c2 r2 r2 r2 c2] r2  | % 162
+     c2[ r2 c2 r2 r2 r2 c2 c2]  | % 163
+     \newExercise 8
+     c2[ r2 c2 r2 r2 c2] r2 r2  | % 164
+     c2[ r2 c2 r2 r2 c2 r2 c2]  | % 165
+     c2[ r2 c2 r2 r2 c2 c2] r2  | % 166
+     c2[ r2 c2 r2 r2 c2 c2 c2]  | % 167
+     \newExercise 8
+     c2[ r2 c2 r2 c2] r2 r2 r2  | % 168
+     c2[ r2 c2 r2 c2 r2 r2 c2]  | % 169
+     c2[ r2 c2 r2 c2 r2 c2] r2  | % 170
+     c2[ r2 c2 r2 c2 r2 c2 c2]  | % 171
+     \newExercise 8
+     c2[ r2 c2 r2 c2 c2] r2 r2  | % 172
+     c2[ r2 c2 r2 c2 c2 r2 c2]  | % 173
+     c2[ r2 c2 r2 c2 c2 c2] r2  | % 174
+     c2[ r2 c2 r2 c2 c2 c2 c2]  | % 175
+     \newExercise 8
+     c2[ r2 c2 c2] r2 r2 r2 r2  | % 176
+     c2[ r2 c2 c2 r2 r2 r2 c2]  | % 177
+     c2[ r2 c2 c2 r2 r2 c2] r2  | % 178
+     c2[ r2 c2 c2 r2 r2 c2 c2]  | % 179
+     \newExercise 8
+     c2[ r2 c2 c2 r2 c2] r2 r2  | % 180
+     c2[ r2 c2 c2 r2 c2 r2 c2]  | % 181
+     c2[ r2 c2 c2 r2 c2 c2] r2  | % 182
+     c2[ r2 c2 c2 r2 c2 c2 c2]  | % 183
+     \newExercise 8
+     c2[ r2 c2 c2 c2] r2 r2 r2  | % 184
+     c2[ r2 c2 c2 c2 r2 r2 c2]  | % 185
+     c2[ r2 c2 c2 c2 r2 c2] r2  | % 186
+     c2[ r2 c2 c2 c2 r2 c2 c2]  | % 187
+     \newExercise 8
+     c2[ r2 c2 c2 c2 c2] r2 r2  | % 188
+     c2[ r2 c2 c2 c2 c2 r2 c2]  | % 189
+     c2[ r2 c2 c2 c2 c2 c2] r2  | % 190
+     c2[ r2 c2 c2 c2 c2 c2 c2]  | % 191
+     \newExercise 8
+     c2[ c2] r2 r2 r2 r2 r2 r2  | % 192
+     c2[ c2 r2 r2 r2 r2 r2 c2]  | % 193
+     c2[ c2 r2 r2 r2 r2 c2] r2  | % 194
+     c2[ c2 r2 r2 r2 r2 c2 c2]  | % 195
+     \newExercise 8
+     c2[ c2 r2 r2 r2 c2] r2 r2  | % 196
+     c2[ c2 r2 r2 r2 c2 r2 c2]  | % 197
+     c2[ c2 r2 r2 r2 c2 c2] r2  | % 198
+     c2[ c2 r2 r2 r2 c2 c2 c2]  | % 199
+     \newExercise 8
+     c2[ c2 r2 r2 c2] r2 r2 r2  | % 200
+     c2[ c2 r2 r2 c2 r2 r2 c2]  | % 201
+     c2[ c2 r2 r2 c2 r2 c2] r2  | % 202
+     c2[ c2 r2 r2 c2 r2 c2 c2]  | % 203
+     \newExercise 8
+     c2[ c2 r2 r2 c2 c2] r2 r2  | % 204
+     c2[ c2 r2 r2 c2 c2 r2 c2]  | % 205
+     c2[ c2 r2 r2 c2 c2 c2] r2  | % 206
+     c2[ c2 r2 r2 c2 c2 c2 c2]  | % 207
+     \newExercise 8
+     c2[ c2 r2 c2] r2 r2 r2 r2  | % 208
+     c2[ c2 r2 c2 r2 r2 r2 c2]  | % 209
+     c2[ c2 r2 c2 r2 r2 c2] r2  | % 210
+     c2[ c2 r2 c2 r2 r2 c2 c2]  | % 211
+     \newExercise 8
+     c2[ c2 r2 c2 r2 c2] r2 r2  | % 212
+     c2[ c2 r2 c2 r2 c2 r2 c2]  | % 213
+     c2[ c2 r2 c2 r2 c2 c2] r2  | % 214
+     c2[ c2 r2 c2 r2 c2 c2 c2]  | % 215
+     \newExercise 8
+     c2[ c2 r2 c2 c2] r2 r2 r2  | % 216
+     c2[ c2 r2 c2 c2 r2 r2 c2]  | % 217
+     c2[ c2 r2 c2 c2 r2 c2] r2  | % 218
+     c2[ c2 r2 c2 c2 r2 c2 c2]  | % 219
+     \newExercise 8
+     c2[ c2 r2 c2 c2 c2] r2 r2  | % 220
+     c2[ c2 r2 c2 c2 c2 r2 c2]  | % 221
+     c2[ c2 r2 c2 c2 c2 c2] r2  | % 222
+     c2[ c2 r2 c2 c2 c2 c2 c2]  | % 223
+     \newExercise 8
+     c2[ c2 c2] r2 r2 r2 r2 r2  | % 224
+     c2[ c2 c2 r2 r2 r2 r2 c2]  | % 225
+     c2[ c2 c2 r2 r2 r2 c2] r2  | % 226
+     c2[ c2 c2 r2 r2 r2 c2 c2]  | % 227
+     \newExercise 8
+     c2[ c2 c2 r2 r2 c2] r2 r2  | % 228
+     c2[ c2 c2 r2 r2 c2 r2 c2]  | % 229
+     c2[ c2 c2 r2 r2 c2 c2] r2  | % 230
+     c2[ c2 c2 r2 r2 c2 c2 c2]  | % 231
+     \newExercise 8
+     c2[ c2 c2 r2 c2] r2 r2 r2  | % 232
+     c2[ c2 c2 r2 c2 r2 r2 c2]  | % 233
+     c2[ c2 c2 r2 c2 r2 c2] r2  | % 234
+     c2[ c2 c2 r2 c2 r2 c2 c2]  | % 235
+     \newExercise 8
+     c2[ c2 c2 r2 c2 c2] r2 r2  | % 236
+     c2[ c2 c2 r2 c2 c2 r2 c2]  | % 237
+     c2[ c2 c2 r2 c2 c2 c2] r2  | % 238
+     c2[ c2 c2 r2 c2 c2 c2 c2]  | % 239
+     \newExercise 8
+     c2[ c2 c2 c2] r2 r2 r2 r2  | % 240
+     c2[ c2 c2 c2 r2 r2 r2 c2]  | % 241
+     c2[ c2 c2 c2 r2 r2 c2] r2  | % 242
+     c2[ c2 c2 c2 r2 r2 c2 c2]  | % 243
+     \newExercise 8
+     c2[ c2 c2 c2 r2 c2] r2 r2  | % 244
+     c2[ c2 c2 c2 r2 c2 r2 c2]  | % 245
+     c2[ c2 c2 c2 r2 c2 c2] r2  | % 246
+     c2[ c2 c2 c2 r2 c2 c2 c2]  | % 247
+     \newExercise 8
+     c2[ c2 c2 c2 c2] r2 r2 r2  | % 248
+     c2[ c2 c2 c2 c2 r2 r2 c2]  | % 249
+     c2[ c2 c2 c2 c2 r2 c2] r2  | % 250
+     c2[ c2 c2 c2 c2 r2 c2 c2]  | % 251
+     \newExercise 8
+     c2[ c2 c2 c2 c2 c2] r2 r2  | % 252
+     c2[ c2 c2 c2 c2 c2 r2 c2]  | % 253
+     c2[ c2 c2 c2 c2 c2 c2] r2  | % 254
+     c2[ c2 c2 c2 c2 c2 c2 c2]  | % 255
    #})
