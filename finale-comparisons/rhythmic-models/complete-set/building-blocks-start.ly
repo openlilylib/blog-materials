@@ -33,8 +33,11 @@ newExercise =
 
 % Prepare the five versions of the pattern
 I =  {
-  % Use the \patterns function and pass the denominator as argument
-  \patterns 2
+  % Remove any beams for the halfnote and crotchet layers
+  \noBeamForLongerNotes { 
+    % Use the \patterns function and pass "2" as the denominator
+    \patterns 2 
+  }
 }
 
 II =  {
@@ -42,8 +45,10 @@ II =  {
   \shiftDurations #1 #0
   % make them use double space
   \scaleDurations 2/1
-  % use the modified pattern with "4" as denominator
-  \patterns 4
+  \noBeamForLongerNotes {
+    % use the modified pattern with "4" as denominator
+    \patterns 4
+  }
 }
 
 III =  {
@@ -70,13 +75,8 @@ V =  {
   % Several layers in parallel
   <<
     % Five DrumStaff instances with their corresponding patterns
-    \new DrumStaff \drummode { 
-      % Remove any beams for the halfnote and crotchet layers
-      \override Beam.stencil = ##f
-      \I }
-    \new DrumStaff \drummode { 
-      \override Beam.stencil = ##f
-      \II }
+    \new DrumStaff \drummode { \I }
+    \new DrumStaff \drummode { \II }
     \new DrumStaff \drummode { \III }
     \new DrumStaff \drummode { \IV }
     \new DrumStaff \drummode { \V }
