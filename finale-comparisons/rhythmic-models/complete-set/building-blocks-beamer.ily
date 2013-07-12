@@ -4,7 +4,6 @@
 % - ragged right
 
 #(set-default-paper-size "a4landscape")
-#(set-global-staff-size #33)
 
 \paper {
   ragged-right = ##t
