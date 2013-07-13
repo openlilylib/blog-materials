@@ -15,6 +15,7 @@ def pattern(index):
     last = pat.rfind('1')
     # building blocks for the pattern
     notes = { '1': 'c2', '0': 'r2' }
+    # find first and last notes for beaming
     if (first == -1) or (first == last):
         first = last = -2
     beams = { first: '[ ', last: '] ' }
