@@ -5,7 +5,9 @@
 music = \relative c { 
   \key c \major 
   \clef bass
-  c4 d e( d | % 110
+  c4 d 
+       \shape Slur #'((0 . 0)(1 . 0)(0 . -1)(0 . 0))
+       e( d | % 110
   f2 a4.) g16 f | % 111
   e1\fermata %112
 }
