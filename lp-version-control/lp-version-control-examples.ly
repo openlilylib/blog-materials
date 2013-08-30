@@ -5,13 +5,13 @@
 music = \relative c { 
   \key c \major 
   \clef bass
-  c4 d e d | 
-  f2 a4. g16 f | 
-  e2. c4-| | c'1 |
-  b4.( a8 g4) b-> | 
-  c2 c, | 
-  a' g4-- fis-- | 
-  g1\fermata 
+  c4 d e d | % 110
+  f2 a4. g16 f | % 111
+  e2. c4-| | c'1 | % 112
+  b4.( a8 g4) b-> | % 113
+  c2 c, | % 114
+  a' g4-- fis-- | %115
+  g1\fermata %116
 }
 
 \score {
