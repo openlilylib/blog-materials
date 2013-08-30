@@ -1,0 +1,15 @@
+diff --git a/lp-version-control/lp-version-control-examples.ly b/lp-version-control/lp-version-control-examples.ly
+index 5ead2eb..40cd09e 100644
+--- a/lp-version-control/lp-version-control-examples.ly
++++ b/lp-version-control/lp-version-control-examples.ly
+@@ -2,8 +2,8 @@
+ 
+ % Examples for "LilyPond and Version Control" post
+ 
+-music = \relative c { \key g \major \clef bass
+-  c4 d e d | f2 a4. g16 f | e2. c4 | c'1 |
++music = \relative c { \key c \major \clef bass
++  c4 d e d | f2 a4. g16 f | e2. c4-| | c'1 |
+   b4.( a8 g4) b-> | c2 c, | a' g4-- fis-- | g1\fermata }
+ 
+ \score {
