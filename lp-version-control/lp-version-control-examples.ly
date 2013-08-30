@@ -10,7 +10,7 @@ music = \relative c {
   e2. c4-| | c'1 | % 112
   b4.( a8 g4) b-> | % 113
   c2 c, | % 114
-  a' g4-- fis-- | %115
+  a' g4-.-- fis-.-- | %115
   g1\fermata %116
 }
 
