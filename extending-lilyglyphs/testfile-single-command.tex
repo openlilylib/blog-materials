@@ -1,0 +1,11 @@
+\documentclass{article}
+\usepackage{fontspec}
+\usepackage{lilyglyphs}
+% ”accordion.discant”
+\newcommand*{\accordionDiscant}[1][]{%
+    \setkeys{lilyDesignOptions}{scale=1,raise=-.2}%
+    \lilyPrint[#1]{\lilyGetGlyph{accordion.discant}}%
+}
+\begin{document}
+Test \accordionDiscant{} with more text \accordionDiscant.
+\end{document}

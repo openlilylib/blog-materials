@@ -1,0 +1,33 @@
+cmd=accordionDiscant
+element=accordion.discant
+comment=accordion discant
+raise=-.2
+
+cmd=accordionDot
+element=accordion.dot
+comment=accordion dot
+
+cmd=accordionFreeBass
+element=accordion.freebass
+comment=accordion free bass
+
+cmd=accordionStdBass
+element=accordion.stdbass
+comment=accordion standard bass
+
+cmd=accordionBayanBass
+element=accordion.bayanbass
+comment=accordion bayan bass
+
+cmd=accordionOldEE
+element=accordion.oldEE
+comment=accordion old EE
+
+cmd=accordionPull
+element=accordion.pull
+comment=accordion pull
+
+cmd=accordionPush
+element=accordion.push
+comment=accordion push
+ 
