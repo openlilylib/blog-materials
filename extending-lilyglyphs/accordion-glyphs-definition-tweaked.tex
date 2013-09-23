@@ -1,0 +1,207 @@
+% New Glyphs for the lilyglyphs package
+% created by lily-glyph-commands.py on 2013-09-23
+
+% This file contains definitions for the new commands
+% along with test code for them.
+% You can test the commands in the context of continuous text
+% and adjust their design time options.
+% Afterwards you should manually move the commands to
+% the appropriate .inp files,
+% because this file will be overwritten by the next run
+% of lily-glyph-commands.py!
+% If you want to keep this file for reference
+% you should save it with a new name.
+%
+% There also is a table containing entries for use in the lilyglyph manual.
+% You can either copy the whole table to the appropriate
+% place in lilyglyphs.tex or just copy individual table rows.
+
+\documentclass{scrartcl}
+\usepackage{lilyglyphsStyle}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+% new command definitions
+
+% accordion bayan bass
+% created by lily-glyph-commands.py on 2013-09-23
+\newcommand*{\accordionBayanBass}[1][]{%
+	\setkeys{lilyDesignOptions}{scale=1,raise=-.2}%
+	\hspace*{.5ex}%
+	\lilyPrint[#1]{\lilyGetGlyph{accordion.bayanbass}%
+		\hspace*{-.3ex}}%
+}
+
+% accordion discant
+% created by lily-glyph-commands.py on 2013-09-23
+\newcommand*{\accordionDiscant}[1][]{%
+	\setkeys{lilyDesignOptions}{scale=1,raise=-.2}%
+	\hspace*{.6ex}%
+	\lilyPrint[#1]{\lilyGetGlyph{accordion.discant}%
+	\hspace*{-.3ex}}%
+}
+
+% accordion dot
+% created by lily-glyph-commands.py on 2013-09-23
+\newcommand*{\accordionDot}[1][]{%
+	\setkeys{lilyDesignOptions}{scale=1,raise=-.2}%
+	\hspace*{.7ex}%
+	\lilyPrint[#1]{\lilyGetGlyph{accordion.dot}}%
+}
+
+% accordion free bass
+% created by lily-glyph-commands.py on 2013-09-23
+\newcommand*{\accordionFreeBass}[1][]{%
+	\setkeys{lilyDesignOptions}{scale=1,raise=-.2}%
+	\hspace*{.5ex}%
+	\lilyPrint[#1]{\lilyGetGlyph{accordion.freebass}}%
+}
+
+% accordion old EE
+% created by lily-glyph-commands.py on 2013-09-23
+\newcommand*{\accordionOldEE}[1][]{%
+	\setkeys{lilyDesignOptions}{scale=1,raise=-.2}%
+	\hspace*{.5ex}%
+	\lilyPrint[#1]{\lilyGetGlyph{accordion.oldEE}}%
+}
+
+% accordion pull
+% created by lily-glyph-commands.py on 2013-09-23
+\newcommand*{\accordionPull}[1][]{%
+	\setkeys{lilyDesignOptions}{scale=1,raise=-.2}%
+	\hspace*{.2ex}%
+	\lilyPrint[#1]{\lilyGetGlyph{accordion.pull}}%
+}
+
+% accordion push
+% created by lily-glyph-commands.py on 2013-09-23
+\newcommand*{\accordionPush}[1][]{%
+	\setkeys{lilyDesignOptions}{scale=1,raise=-.2}%
+	\hspace*{.5ex}%
+	\lilyPrint[#1]{\lilyGetGlyph{accordion.push}}%
+}
+
+% accordion standard bass
+% created by lily-glyph-commands.py on 2013-09-23
+\newcommand*{\accordionStdBass}[1][]{%
+	\setkeys{lilyDesignOptions}{scale=1,raise=-.2}%
+	\hspace*{.9ex}%
+	\lilyPrint[#1]{\lilyGetGlyph{accordion.stdbass}%
+	\hspace*{-.4ex}}%
+}
+
+
+
+\begin{document}
+
+%%%%%%%%%%%%%
+% Text output
+
+\section*{New \lilyglyphs{} commands}
+created by lily-glyph-commands.py on 2013-09-23
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Reference table to be used in the manual
+% (use complete or single lines)
+
+\begin{reftable}{New commands}{newcommands}
+\accordionBayanBass & \cmd{accordionBayanBass} & description\\
+\accordionDiscant & \cmd{accordionDiscant} & description\\
+\accordionDot & \cmd{accordionDot} & description\\
+\accordionFreeBass & \cmd{accordionFreeBass} & description\\
+\accordionOldEE & \cmd{accordionOldEE} & description\\
+\accordionPull & \cmd{accordionPull} & description\\
+\accordionPush & \cmd{accordionPush} & description\\
+\accordionStdBass & \cmd{accordionStdBass} & description\\
+\end{reftable}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Test code for fine-tuning the new commands
+
+
+\noindent\textbf{\textsf{Continuous text for} \cmd{accordionBayanBass}:}\\
+Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+sed \accordionBayanBass{} do eiusmod tempor incididunt ut labore et dolore magna aliqua \accordionBayanBass.\\
+\accordionBayanBass{} Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+cillum dolore eu fugiat nulla pariatur \accordionBayanBass.
+\accordionBayanBass{} Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+\bigskip
+
+
+\noindent\textbf{\textsf{Continuous text for} \cmd{accordionDiscant}:}\\
+Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+sed \accordionDiscant{} do eiusmod tempor incididunt ut labore et dolore magna aliqua \accordionDiscant.\\
+\accordionDiscant{} Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+cillum dolore eu fugiat nulla pariatur \accordionDiscant.
+\accordionDiscant{} Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+\bigskip
+
+
+\noindent\textbf{\textsf{Continuous text for} \cmd{accordionDot}:}\\
+Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+sed \accordionDot{} do eiusmod tempor incididunt ut labore et dolore magna aliqua \accordionDot.\\
+\accordionDot{} Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+cillum dolore eu fugiat nulla pariatur \accordionDot.
+\accordionDot{} Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+\bigskip
+
+
+\noindent\textbf{\textsf{Continuous text for} \cmd{accordionFreeBass}:}\\
+Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+sed \accordionFreeBass{} do eiusmod tempor incididunt ut labore et dolore magna aliqua \accordionFreeBass.\\
+\accordionFreeBass{} Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+cillum dolore eu fugiat nulla pariatur \accordionFreeBass.
+\accordionFreeBass{} Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+\bigskip
+
+
+\noindent\textbf{\textsf{Continuous text for} \cmd{accordionOldEE}:}\\
+Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+sed \accordionOldEE{} do eiusmod tempor incididunt ut labore et dolore magna aliqua \accordionOldEE.\\
+\accordionOldEE{} Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+cillum dolore eu fugiat nulla pariatur \accordionOldEE.
+\accordionOldEE{} Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+\bigskip
+
+
+\noindent\textbf{\textsf{Continuous text for} \cmd{accordionPull}:}\\
+Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+sed \accordionPull{} do eiusmod tempor incididunt ut labore et dolore magna aliqua \accordionPull.\\
+\accordionPull{} Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+cillum dolore eu fugiat nulla pariatur \accordionPull.
+\accordionPull{} Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+\bigskip
+
+
+\noindent\textbf{\textsf{Continuous text for} \cmd{accordionPush}:}\\
+Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+sed \accordionPush{} do eiusmod tempor incididunt ut labore et dolore magna aliqua \accordionPush.\\
+\accordionPush{} Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+cillum dolore eu fugiat nulla pariatur \accordionPush.
+\accordionPush{} Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+\bigskip
+
+
+\noindent\textbf{\textsf{Continuous text for} \cmd{accordionStdBass}:}\\
+Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+sed \accordionStdBass{} do eiusmod tempor incididunt ut labore et dolore magna aliqua \accordionStdBass.\\
+\accordionStdBass{} Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+cillum dolore eu fugiat nulla pariatur \accordionStdBass.
+\accordionStdBass{} Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+\bigskip
+\end{document}
