@@ -37,3 +37,6 @@
 *~
 
 *.eps
+
+# Audacity files
+*.au
