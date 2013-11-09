@@ -14,38 +14,35 @@
 
 As pointed out in previous posts by Urs Liska \textcolor{red}{[links to "Plain Text Files in Music" and
 "Programmatically Generating LilyPond Input"]}, a music engraving program that is based on plain text has
-the potential to be programmatically controlled by the user, which is a big attractive for an algorithmic
+the potential to be programmatically controlled by the user, which is a big attraction for an algorithmic
 composer such as myself. 
 There are numerous ways of manipulating plain text files, and this can be done by using virtually any
 programming language one might know. 
-In the case of LilyPond, it is possible to programatically write a score by directly inputting a mixture
+With LilyPond it is possible to programatically write a score by directly inputting a mixture
 of regular LilyPond code and code written in its extension language, Scheme; another popular choice is to
 use Python, together with dedicated packages such as Abjad \textcolor{red}{[link to its website]}. 
-On my case though, I have chosen to do all my work using Fortran 95.
+In my case though, I have chosen to do all my work using Fortran 95.
 
 I use Fortran for a very simple reason: before studying music, I studied physics for a couple of years,
 where all my programming projects had to be written in Fortran. 
-Even with all its limitation, I still see Fortran as a very powerful language, particularly when dealing
-with pure mathematical calculations (something that I use constantly on my compositions). 
-And then, during the last months, I have been writing a library of subroutines for Fortran which works as
-a LilyPond parser 
-\textcolor{red}{[is parser the correct word? sorry but I lack basic terminology of programming.
-I meant that my library works as a sort of "translator" from Fortran into LilyPond]}, allowing me to
-algorithmically generate a .LY file.
+Even with all its limitations, I still see Fortran as a very powerful language, particularly when dealing
+with purely mathematical calculations (something that I use constantly in my compositions). 
+And then, during the last months, I have been writing a library of subroutines for Fortran which produce
+LilyPond input and allow me to algorithmically generate a complete .LY file.
 
 Due to both my wish to experiment with my library and my interest in gradual processes in music,
 I decided to implement Steve Reich's \textit{Clapping Music} \textcolor{red}{[link to some performance
 at Youtube maybe?!]}. 
-For those whom are not familiar with this composition, it follows a very simple algorithm: take a pattern
+For those whom are not familiar with this composition, it strictly follows a very simple algorithm: take a pattern
 of claps and rests of length $N$ (in eighth notes). 
 Player 1 will play this pattern in its original form for $N^2+N$ times. 
 Player 2 will play the original pattern for $N$ times; after this, the pattern will have all its notes
 shifted by $-1$ beat (i.e., all notes move one beat to the left, and the first note becomes the last)
 and then it will be repeated for another $N$ times; 
 after this, the current pattern will once again shift by $-1$ beat and be repeated for another $N$ times. 
-This process is repeated until the two patterns coincide once again, when they are repeated for another $N$
-times before ending the work (in principle, this procedure is somehow similar to Reich's ideas of playing a
-same melody at different speeds, applied in works such as \textit{Piano Phases}).
+This process is repeated until the two patterns coincide once again, then they are repeated for another $N$
+times before ending the work (this procedure is related to Reich's ideas of simultaneously playing a pattern
+at different speed, applied in works such as \textit{Piano Phases}).
 
 It is very important to note that Reich's composition consists of a single score with a specific chosen pattern:
 
@@ -59,7 +56,7 @@ the interpreter to read out loud any text in any room (so, unlike Reich, he does
 \textit{pattern}). \\
 
 While implementing Reich's score with his own pattern, I thought that it could be interesting to generalize
-his algorithm, so that the user could input any  pattern of claps and rests, of any length, and get his score
+his algorithm, so that the user could input any pattern of claps and rests, of any length, and get his score
 automatically generated in front of him. 
 The result of this little experiment is the present program I wrote. 
 In pseudo code (Fortran style), Reich's algorithm looks like this:
@@ -125,7 +122,7 @@ having been influenced by the automation of the integral serialism, by Iannis Xe
 computers (mainly as a calculator on his case) and by composers that think of music as a process (such as Steve
 Reich and also the spectral composers), nowadays I consider that the act of composing cannot be distinguished from
 the act of creating and organizing generative musical procedures. 
-It is as if one would create the laws that governs a hypothetical world, and then let this world evolute by
+It is as if one would create the laws that governs a hypothetical world, and then let this world evolve by
 itself (with the help of stochastic events, for instance). 
 Lately, my main interest is to produce music that renews itself at every performance, be it electronic,
 be it acoustic. 
