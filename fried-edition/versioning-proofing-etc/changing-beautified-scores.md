@@ -11,27 +11,20 @@ Anybody who as ever prepared publication quality scores can easily see the awful
 
 Thanks to the use of versioning the whole process of beautification and proof-reading is meticulously documented. Therefore I can give you a quite specific report on how LilyPond coped with the task.
 
-One nice thing about managing an edition project with LilyPond and version control is that I (as the editor) can directly apply any fixes to the shared source files without worrying about file conflicts. I don't have to either send Janek (the engraver) a list with fixes or ask him to send me the score file (while at the same time he must not edit it himself!). So I applied all the fixes found while proof-reading myself, committing them to the repository one by one. This gave the opportunity to judge their implications individually and comment on them. But to my (pleasant) surprise the phrase I used in the *vast* majority of commit messages was *“No side-effects noticed”*. This means that in most cases applying a fix *did* cause a change in layout (obviously) but *did not* cause a regression.  
-In a typical run-through of this process for a song I applied five to ten fixes to the musical text and wrote a list of four or five “beautification requests”, that is issues I desired to have improved in the beautification of the score.  
-When Janek was assigned to finish off the song he would first process the beautification requests and then look for the issues created by my modifications. Usually there were only one or two things he had to postprocess by adding or updating tweaks. Considering how delicate it is for an engraving software to accomodate subsequent changes I can't say anything else than this was a triumphal success for LilyPond's performance.
-
+One nice thing about managing an edition project with LilyPond and version control is that I (as the editor) can directly apply any fixes to the shared source files without worrying about file conflicts. I don't have to either send Janek (the engraver) a list with fixes or ask him to send me the score file (while at the same time he must not edit it himself!). So I applied all the fixes found while proof-reading myself, committing them to the repository one by one. This gave me the opportunity to judge their implications individually and comment on them. But to my (pleasant) surprise the phrase I used in the *vast* majority of commit messages was *“No side-effects noticed”*. This means that in most cases applying a fix *did* (obviously) cause a change in layout but *did not* cause a regression.  
+In a typical run-through of this process for a song I applied five to ten fixes to the musical text and wrote a list of four or five “beautification requests”, that is issues I wanted to have changed in the beautification of the score, either because Janek might have missed them or because I wanted something differently.  
+When Janek was assigned to finish off the song he would first process the beautification requests and then look for the issues created by my modifications. Usually there were only one or two things he had to postprocess by adding or updating tweaks. Actually there even were numerous songs where he didn't have to fix any of my modifications at all. Considering how delicate it is for an engraving software to accomodate subsequent changes I can't say anything else than this was a triumphal success for LilyPond's performance.
 
 ##### Examples
 
+In the remaining part of this post I will show you some examples of changes in the musical text and their impact on the layout. There will be some with and some without side-effects. Note that I didn't collect these examples along the way but can now easily reproduce them thanks to version control ;-)
+
 - op. 3,4: Fix poet name
 - op. 3.3: parenthesize accidental m.42  
-  (seems to have surprisingly no side-effects)
-- op. 4,1: *Try* to alter broken  
-  (interesting: I actually did it but failed. Janek could simply spot the error)
-- op. 4,1: Fix two notes m.35-36
-- op. 7,3: Reattach phrasing slur m. 50-52
-- op. 7,5: Make slur visible m. 27-30
 - op. 7,5: Change beam/slur m. 19
 - op. 7,6: Restore voicing m. 30
 - op. 7,7: Remove accidental m. 32  
 this *had* some side-effects
-- op. 7,5: Add staff changes m. 43/44  
-this *had* some side-effects (staff distance)
 
-Mention hotfix branches?  
-In any case there should be at least one example where *I* started tweaking myself: 4,2: Fake staff switch
+- op. 7,3: Reattach phrasing slur m. 50-52
+- op. 7,5: Make slur visible m. 27-30
