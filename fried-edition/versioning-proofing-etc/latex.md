@@ -1,10 +1,66 @@
 ##### Create the complete volume with LaTeX
 
-We didn't only prepare our scores in (LilyPond) text files, also the main volume was created that way, namely as a LaTeX document.
+*This post is part of a [series](http://lilypondblog.org/category/fried-songs) analyzing LilyPond's performance during the preparation of a new edition of [Oskar Fried's songs](http://lilypondblog.org/2013/10/oskar-fried-complete-songs).*
 
-Using LaTeX for such a task offers quite a number of advantages over using commercial DTP tools. From the workflow perspective it is clear that it offers all the goodies that versioning provides us with - exactly like with the LilyPond part. In fact I could even encourage some people without any prior knowledge to review and edit files through the [Bitbucket](https://bitbucket.org) web interface.
+Of course it is clear that we prepared the scores of our edition with LilyPond. But at one point we decided to use yet another plain text tool to compile the complete volume, LaTeX.
+The question of integrating text and music pops up regularly on the lilypond-user mailing list, so it may be interesting to see some of the tricks we applied to manage this project.
+After that I will talk about some nice features I learned to love during the project
+<--more-->
 
-From the result perspective one has to note the *really* good typography that LaTeX offers, particularly lualatex in combination with the `microtype` package which really does toplevel paragraph formatting.
+
+There are several ways to mix text and music in a document, but in a case like ours where we have scores and text neatly separated on individual pages it's quite natural to create one LaTeX document for the whole compilation and include the scores' PDF documents through `\includepdf` from the `pdfpages` package.
+While this is basically very straightforward there *are* issues to consider, namely page layout, headers and footers and finally page numbering.
+
+I think page layout in music books heavily differs from that of text books and therefore of LaTeX's default behaviour. In general you will have much smaller margins on A4 or similarly large paper. In text typesetting you are confronted with the issue of reducing the linewidth in order to improve legibility - an issue that is completely different with scores. Therefore you should happily ignore LaTeX's inclination to calculated type areas and hardcode it with the `geometry` package to fit your scores' margins.
+
+The next topic to consider are page headers and footers - who should print them, LilyPond or LaTeX? We decided to let LaTeX print them because this automatically takes care of any page numberings, even when something changes, and of course it would have been difficult to get the formatting of footers and page numbers identical.  
+But when working on a single song you normally work directly with the score, and you may consider it impractical to have a printout without any numberings. So what to do about this situation?
+Our solution was part of a concept we used to call *Draft Mode*, which I can only recommend to adapt in one way or the other.
+Basically we had include commands in each file that could load either a "draftMode", a "prePubMode" or no style sheet.
+
+<pre class="lilypond"><span class="lilypond-comment">% Optionally activate draft Mode or prePublication mode</span>
+<span class="lilypond-comment">% Both modes print a &quot;progress bar&quot; in the header line.</span>
+<span class="lilypond-comment">% draft mode additionally applies coloring th many manually applied tweaks</span>
+
+<span class="lilypond-keyword">\include</span> <span class="lilypond-string">&quot;</span><span class="lilypond-string">../includes/config/draftMode.ily</span><span class="lilypond-string">&quot;</span>
+<span class="lilypond-comment">%\include &quot;../includes/config/prePubMode.ily&quot;</span>
+</pre>
+
+These modes did a lot which I may write about another time. But in particular they printed a "status bar" and page numbers. One little noteworthy trick was that if no mode-stylesheet was included the status bar was printed anyway but with an empty string. This way it didn't affect page layout and we could safely switch modes on and off until the last day.  
+To make sure we didn't produce any confusion I colored the items in LaTeX so we could make sure there were no remnants of LilyPond items in the final volume, and in the end I could simply revert that coloring for printing.
+
+---
+
+Now after having talked a little bit about the complexity of our approach I'm going to tell you why I think it *was* a good idea to go that way. Actually I can't recall anymore whether I decided to learn LaTeX because I just had started using Git. Maybe I started using Git because I then could also integrate LaTeX in our project considerations. Anyway I did the switch, made our Fried song book my first real LaTeX document - and am happy with it.
+
+Using LaTeX for such a task offers quite a number of advantages over using commercial DTP tools. Considering the result I can say that LaTeX's typesetting is typographically completely up to par with any competitor, particularly lualatex in combination with the `microtype` package which really does good paragraph formatting.
+See for example this paragraph that I have rebuilt with LibreOffice using the same font as in our book:
+
+![](LibreOffice.png)
+
+Typeset with "plain" LuaLaTeX it looks like this:
+
+![](lualatex-no-microtype.png)
+
+which is already much better because the spacing is significantly better balanced. A detail that happens only twice in this paragraph but that makes a big difference between word processor and typesetter is the ligature in "typografisch".  
+But the `microtype` package adds the finishing touches to it: protrusion and font expansion.
+
+![](lualatex-microtype.png)
+
+Rather obvious is that the hyphens protrude out of the margin. It may first seem strange that this should be an advantage, but once you start to notice it you'll realize that it makes the visual appearance of the margin *much* more steady and calm. Go back and look at the previous image where the hyphens cause the right edge of the text block to appear interrupted. Other good candidates for protrusion are quotation marks but actually it affects all characters to a greater or lesser extent. Look in books that you have or on any printed media around you: Who cares for protrusion? You'll notice that in old books this is really standard while today it is rather rare.
+The other technique is "font expansion" that uses tiny bits of squeezing and pulling at the character shapes and the space between them to create a more even distribution of the text on the page. In effect using this package gives you professional typesetting without having to know about it. And the additional package `selnolig` even takes care of removing unsuitable ligatures for you. Huh, why remove ligatures now? Well, at least in German typography there are many places where you should *not* use ligatures, particularly at syllable borders: So this
+
+![](hoffen-correct.png)
+
+is correct while this
+
+![](hoffen-wrong.png)
+
+is wrong.
+
+
+
+From the workflow perspective it is clear that it offers all the goodies that versioning provides us with - exactly like with the LilyPond part. In fact I could even encourage some people without any prior knowledge to review and edit files through the [Bitbucket](https://bitbucket.org) web interface.
 
 Recalling earlier projects with considerably simpler tasks I wouldn't want to think of editing a 124 page document with heavy graphics (scores) in InDesign. LaTeX is simply shrugging its shoulders about such dimensions because it doesn't have to keep such a document “open”. Of course a recompilation takes its time, but thanks to include-files one can work on short segments most of the time.
 
