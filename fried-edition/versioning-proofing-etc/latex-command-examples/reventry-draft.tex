@@ -1,0 +1,34 @@
+
+\documentclass[fried-lieder]{subfiles}
+\begin{comment}
+	Example for a blog entry.
+	Can only be compiled in the context of the 'real' Fried project folder
+\end{comment}
+
+\begin{document}
+%\section{Revisionsbericht}
+
+\setAppendixFonts
+
+\renewcommand{\revEntry}[4]{%
+\vspace*{-1em}
+\begin{tabbing}
+	Comment \hspace{1em} \= tada \kill
+   	Measure: \> \ifthenelse{\equal{#1}{}}{(continued)}{\textbf{#1}}\\
+   	Position: \> \ifthenelse{\equal{#2}{}}{(not specified)}{\msub{#2}}\\
+   	Part: \> \ifthenelse{\equal{#3}{}}{(not specified)}{#3}
+\end{tabbing}
+\vspace*{-1em}
+	 #4 
+	
+	\rule{3.5cm}{1pt}
+	
+	\smallskip
+}
+
+
+\revEntry{45}{3. \crotchet}{\lh}{Missing slur in OE.}
+\revEntry{46}{}{\lyrics}{OE prints “sie” instead of “er”.}
+\revEntry{}{last \semiquaver}{\rh}{Wrong pitch c\oct[2].}
+
+\end{document}
