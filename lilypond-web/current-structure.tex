@@ -2,21 +2,22 @@
 \usepackage{fontspec}
 \usepackage{microtype}
 \begin{document}
-\section*{Website structure}
+\section*{lilypond.org Website structure}
 
-\begin{itemize}
-\item Front Page\\
+Analysis and improvement considerations by Urs Liska.
+
+\subsection*{Front Page}
 Very short, very concise, good.\\
-Starting text may be extended a little bit.\\
+Starting text may be extended a little bit (but I won't touch it in the first improvement step).\\
 Points to:
-\item \textbf{Introduction}
+
+\subsection*{Introduction}
 	\begin{itemize}
 	\item \textbf{Our Goal}\\
-		Idea is good.\\
-		Second paragraph is somewhat illogical.\\
+		Idea is good but second paragraph is somewhat illogical.\\
 		Could be slightly more elaborate.\\
-		Maybe rename to “Our Mission”?
-	\item\textbf{ What LilyPond does}\\
+		Maybe rename to \textbf{“Our Mission”}?
+	\item\textbf{What LilyPond does}\\
 		Simply links\\
 		--- Features: Good\\
 		--- Examples: Good\\
@@ -26,29 +27,115 @@ Points to:
 		Simply links\\
 		--- Productions\\
 		--- Reviews\\
-		Good. But maybe something from Community should be linked here
+		Good. But maybe something from Community should be linked here too?
 	\item \textbf{How LilyPond works}\\
 		Simply links\\
-		--- Text input: Good
+		--- Text input: Good\\
 		--- Easier Editing: Good, but rename to “Editing”
 	\end{itemize}
-	Has to be considerable restructured.\\
+	Has to be considerably restructured.\\
 	Maybe make sections:\\
 	\begin{itemize}
-	\item What Sets LilyPond Apart:\\
+	\item \textbf{Our Mission}
+	\item \textbf{What Sets LilyPond Apart:}\\
 	--- Features\\
 	--- Examples\\
 	--- Text Input\\
 	--- Editing (not “Easier”)\\
 	--- Background\\
-	--- Freedom
-	\item 
+	--- Freedom\\
+	I think the page order below \emph{Introduction} should be changed to this order.\\
+	\emph{Productions} and \emph{Reviews} should be moved to \emph{Community}.
+	\item \textbf{Read more about LilyPond:}\\
+	--- Reviews\\
+	--- Productions\\
+	--- Publications (what we wrote)\\
+	--- Scores of Beauty\\
+	--- Mailing Lists and Support\\
+	--- Getting involved ($\rightarrow$ "Help us" page)\\
 	\end{itemize}
-\item \textbf{Features}\\
-This page is \emph{very} problematic! Has to be completely restructured\\
-A big problem here is that much of the information is redundant.\\
-Missing:\\
---- Version control
+	As a first step simply link to the existing pages. But these pages will have to be restructured too.\\
+	Probably the order in the "Read more" section should more or less become the structure of \emph{Community} (or at least directly reflect this).
+
+\paragraph{Suggested First Improvement}
+In a first step I would
+\begin{itemize}
+\item Rearrange the link lists and pages as outlined above
+\item Slightly modify the \emph{Our Goal} box
+\item Rewrite \emph{Editing}, mainly by adding an introduction to that page.
 \end{itemize}
 
+\vfill
+\pagebreak
+\subsection*{Introduction$\rightarrow$Features}
+This page is \emph{very} problematic! Has to be completely restructured\\
+A big problem here is that much of the information is redundant.
+
+The following section is just the analysis, later I'll make a suggestion for restructuring the page.
+
+\subsubsection*{Elegance}
+\begin{itemize}
+\item \textbf{Excellent classical engraving}\\
+This is OK. Maybe one has to be slightly more elaborate to make clear why this is something different than \emph{Our Goal (Our Mission)} (but this can be postponed).
+\item \textbf{Effective Layout Choices}\\
+This should rather move to \emph{Usability (Ease of use)}
+\end{itemize}
+
+\subsubsection*{Ease of use}
+I would completely drop the Term \emph{Ease of use}.
+This is a buzz phrase that simply doesn't match reality.
+In any case it's not the feature that sets LilyPond apart.
+This will fall on our toes because a new user won't experience LilyPond like this.\\
+
+\begin{itemize}
+\item \textbf{Text based input}\\
+This has to be enhanced.
+It is clearly written by people who are familiar with the concept.\\
+The sentence about "no need to remember complex command sequences" is nonsense: This might appeal to an Emacs user, but not to a Finale user ;-).
+Instead extend on what text based input really offers.
+Is it OK to link to my lilypondblog.org post here?
+\item \textbf{Mix music and text}\\
+Basically good.
+Maybe add a reference to the MediaWiki extension?
+\item \textbf{Accessibility}\\
+Good.
+Maybe add a link to the score on the \emph{Examples} page?
+\item \textbf{Extensible design}\\
+This is basically good, but should be made clearer and somewhat more elaborate.\\
+But surely not under \emph{Ease of use}.
+This is clearly a toplevel \emph{Feature}.
+\end{itemize}
+
+\subsubsection*{Environment}
+This term has to be reconsidered.
+It's basically OK but somewhat meaningless.
+
+\begin{itemize}
+\item \textbf{Free Software}\\
+Make much shorter and simply link to the dedicated page.
+\item \textbf{Excellent Support}\\
+Good, but could be made more elaborate.\\
+“the development team makes sure that problems are solved quickly” isn't really true.
+Could turned into a better selling point, sth like: “Often you get a solution within hours, and it happens regularly that such solutions will be soon integrated in the product”.
+\item \textbf{Enhanced Editors}\\
+Make slightly shorter and simply link to \emph{Editing} page.
+\end{itemize}
+
+\subsubsection*{Missing items:}
+\begin{itemize}
+\item Version control
+\item Robustness of tweaks
+\end{itemize}
+
+
+
+\section*{Miscellaneous wishes}
+\begin{itemize}
+\item Move \emph{Essay} to \emph{Introduction} and\\
+remove the \emph{Background} placeholder.\\
+-> Impossible because \emph{Essay} isn't a web page but a manual.
+\item Move \emph{Productions} and \emph{Reviews} to \emph{Community}
+\item Add an item \emph{Tools using LilyPond} to the \emph{Productions} page.\\
+For example the MediaWiki extension, AnkiLilyPond, lilybin, schikkers-list.
+\end{itemize}
 \end{document}
