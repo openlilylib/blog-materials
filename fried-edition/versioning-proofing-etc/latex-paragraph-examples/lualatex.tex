@@ -1,10 +1,16 @@
-\documentclass{ulPlainA4}
+\documentclass[12pt]{scrartcl}
+\usepackage[margin=2cm]{geometry}
 \usepackage{fontspec}
+\usepackage{polyglossia}
+\setmainlanguage{german}
 \usepackage{lilyglyphs}
-\usepackage{hologo}
 \usepackage{microtype}
+\setmainfont[Ligatures=TeX,
+	Numbers=OldStyle]{Minion Pro}
 \setmonofont[%
 	Scale=MatchLowercase]{Inconsolata}
+\usepackage{hologo}
+
 
 \begin{document}
 Von noch größerer Bedeutung für den Entstehungsprozess dieser Edition war jedoch LilyPonds textbasiertes Eingabekonzept.
@@ -12,7 +18,7 @@ Durch dieses und die Verwendung des -- ebenfalls textbasierten Textsatzsystems \
 Dies erlaubte es, Arbeitsabläufe und insbesondere die Interaktion zwischen Herausgebern und Notensetzer in einer mir zuvor unvorstellbaren Weise effizient und zuverlässig zu strukturieren.
 Ein erfreuliches »Nebenprodukt« ist \lilyglyphs{}%
 \footnote{\texttt{http://www.ctan.org/pkg/lilyglyphs}}.
-Mit diesem von mir für den Revisionsbericht entwickelten -- und inzwischen in den gängigen \LaTeX-Distributionen enthaltenen -- Paket können beliebige Notationselemente im Fließtext von Textdokumenten verwendet werden.
+Mit diesem von mir für den Revisionsbericht entwickelten -- und inzwischen in den gängigen \LaTeX-Distributionen enthalte\mbox{nen --} Paket können beliebige Notationselemente im Fließtext von Textdokumenten verwendet werden.
 
 Dank gilt den Mitgliedern der \texttt{lilypond-user} Mailingliste, die immer wieder unschätzbare Anregungen zu technischen Lösungen gegeben, aber auch allgemeine notensetzerische oder orthotypografische Fragen erörtert haben.
 \end{document}
