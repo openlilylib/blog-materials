@@ -17,22 +17,23 @@ uncolorGrob =
 colorGrobs =
 #(define-music-function (parser location my-grob-list my-color)
    (symbol-list? color?)
-   (if (> 2 (length my-grob-list))
+   (if (null? my-grob-list)
+       ;; issue an empty music expression
+       #{ #}
        #{
+         % color the first grob type of the current list
          \colorGrob #(car my-grob-list) #my-color
-       #}
-       #{
-         \colorGrob #(car my-grob-list) #my-color
+         % recursively call itself with the remainder
+         % of the current list.
          \colorGrobs #(cdr my-grob-list) #my-color
        #}))
 
 uncolorGrobs =
 #(define-music-function (parser location my-grob-list)
    (symbol-list?)
-   (if (> 2 (length my-grob-list))
-       #{
-         \uncolorGrob #(car my-grob-list)
-       #}
+   (if (null? my-grob-list)
+       ;; issue an empty music expression
+       #{ #}
        #{
          \uncolorGrob #(car my-grob-list)
          \uncolorGrobs #(cdr my-grob-list)

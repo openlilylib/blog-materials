@@ -28,38 +28,20 @@ colorGrobs =
          \colorGrobs #(cdr my-grob-list) #my-color #color-on
        #}))
 
+allGrobNames =
+#(define-scheme-function (parser location)()
+   ;; create a list with all grob names from LilyPond
+   (map (lambda (gd) (car gd)) all-grob-descriptions))
 
 colorMusic =
 #(define-music-function (parser location my-color music)
    (color? ly:music?)
    #{
-     \colorGrobs #'(NoteHead
-                    Stem
-                    Flag
-                    Beam
-                    Rest
-                    Slur
-                    PhrasingSlur
-                    Tie
-                    Script
-                    Dots
-                    DynamicText
-                    Accidental) #my-color ##t
+     \colorGrobs \allGrobNames #my-color ##t
 
      #music
 
-     \colorGrobs #'(NoteHead
-                      Stem
-                      Flag
-                      Beam
-                      Rest
-                      Slur
-                      PhrasingSlur
-                      Tie
-                      Script
-                      Dots
-                      DynamicText
-                      Accidental) #my-color ##f
+     \colorGrobs \allGrobNames #my-color ##f
    #})
 
 music = \relative c' {
