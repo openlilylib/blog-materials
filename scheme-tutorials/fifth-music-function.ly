@@ -1,22 +1,23 @@
 \version "2.18.0"
 
+
 colorMusic =
-#(define-music-function (parser location color music)
+#(define-music-function (parser location my-color music)
    (color? ly:music?)
    #{
-     \temporary \override NoteHead.color = $color
-     \temporary \override Stem.color = $color
-     \temporary \override Flag.color = $color
-     \temporary \override Beam.color = $color
-     \temporary \override Rest.color = $color
-     \temporary \override Slur.color = $color
-     \temporary \override PhrasingSlur.color = $color
-     \temporary \override Tie.color = $color
-     \temporary \override Script.color = $color
-     \temporary \override Dots.color = $color
-     
+     \temporary \override NoteHead.color = #my-color
+     \temporary \override Stem.color = #my-color
+     \temporary \override Flag.color = #my-color
+     \temporary \override Beam.color = #my-color
+     \temporary \override Rest.color = #my-color
+     \temporary \override Slur.color = #my-color
+     \temporary \override PhrasingSlur.color = #my-color
+     \temporary \override Tie.color = #my-color
+     \temporary \override Script.color = #my-color
+     \temporary \override Dots.color = #my-color
+
      $music
-     
+
      \revert NoteHead.color
      \revert Stem.color
      \revert Flag.color
@@ -34,7 +35,7 @@ music = \relative c' {
 }
 
 \relative c' {
-  \colorMusic #blue \music 
+  \colorMusic #blue \music
   \colorMusic #red { c4 c } d \colorMusic #green e\f
   \colorMusic #magenta \music
 }
